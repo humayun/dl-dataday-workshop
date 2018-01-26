@@ -44,7 +44,6 @@ model.save('model.h5', overwrite=True)
 # load model
 loaded_model = load_model('model.h5')
 # evaluate loaded model on test data
-loaded_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+#loaded_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 score = loaded_model.evaluate(X_test, y_test, verbose=0)
 print("%s: %.2f%%" % (loaded_model.metrics_names[1], score[1] * 100))
-
