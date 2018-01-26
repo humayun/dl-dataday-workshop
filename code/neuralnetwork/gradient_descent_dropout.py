@@ -7,11 +7,11 @@ from keras.utils import np_utils
 from keras.callbacks import TensorBoard
 import json
 
-from wandb.wandb_keras import WandbKerasCallback
-import wandb
+#from wandb.wandb_keras import WandbKerasCallback
+#import wandb
 
-run = wandb.init()
-config = run.config
+#run = wandb.init()
+#config = run.config
 
 # load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -43,7 +43,7 @@ model.add(Dense(num_classes, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Fit the model
-history = model.fit(X_train, y_train, epochs=10,batch_size=200, validation_data=(X_test, y_test),callbacks=[tensorboard, WandbKerasCallback()])
+history = model.fit(X_train, y_train, epochs=10,batch_size=200, validation_data=(X_test, y_test),callbacks=[tensorboard])
 
 # Final evaluation of the model
 scores = model.evaluate(X_test, y_test, verbose=0)
