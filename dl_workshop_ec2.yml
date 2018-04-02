@@ -89,7 +89,7 @@ dependencies:
   - zict=0.1.3=py35h29275ca_0
   - zlib=1.2.11=ha838bed_2
   - pip:
-    - cntk==2.0
+    - cntk==2.5
     - opencv-python==3.4.0.12
 prefix: /home/ec2-user/src/anaconda3/envs/dl_workshop
 
